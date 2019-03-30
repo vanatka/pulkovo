@@ -1,3 +1,4 @@
+/build
 # Compiled class file
 *.class
 
@@ -29,6 +30,5 @@ local.properties
 build
 .iml
 *.iml
-.iml
-statscollector.iml
-pulkovo.iml
+debug.iml
+publish.gradle
