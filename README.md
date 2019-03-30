@@ -1,18 +1,46 @@
-# pulkovo
+# Pulkovo. Kotlin library to measure method elapsed time.
 
-Kotlin library to measure elapsed time for Kotlin code: methods, code blocks, or with just start and stop 
+Kotlin library to measure elapsed time for Kotlin code: methods, code blocks, or with just start and stop methods call
 
-Brief description:
+*Brief description:*
+Sometimes it's necessary measure, how much time it takes to execute some block of code.
+In java-android-world there are such solutions like Pury, Meter and etc.
+However they are not Kotlin friendly. 
+
+This library has few concepts:
+- simplicity: 
+- flexible extesibility: synchronous API to make it scalable without huge dependecies
+- plugins-friendly
+- no code change for prod and debug version
+
+## Structure
+tbd
+
+## How to start
+1. Add dependency 
+2. Configure out
+```
+```
+
+## Dependency 
+```
+tbd
+```
+
+## Examples
 
 ```kotlin
 
-  //custom label
-  override fun onStart() = measureMethod("onStart method") {
+  // here we measure method elapsed time, 
+  // here we use custom label, it will tracked as "onStart method"
+  override fun onStart() = measureMethodWithLabel("onStart method") {
     super.onStart()
     //
   }
   
-  // label will be tracked as MainActivity::onCreate
+  // here we measure method elapsed time, 
+  // label will be tracked as MainActivity::onCreate, 
+  // class & method name will extracted automatically
   override fun onCreate(savedInstanceState: Bundle?) = measureMethod(this) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
@@ -20,7 +48,7 @@ Brief description:
     setupClickListeners()
   }
   
-  // measure RxJava chain
+  // measure RxJava chain, it's better
   private fun loadWeather() {
     // here we measure how much time will take data-load for RxJava chain
     startMeasure(
