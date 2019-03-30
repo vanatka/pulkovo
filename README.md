@@ -26,13 +26,13 @@ tbd
 ## How to start
 ### Basic usage
 1. Add dependencies
-```
+```gradle
   debugImplementation 'com.ivanksk.pulkovo:debug:1.0'
   releaseImplementation 'com.ivanksk.pulkovo:production:1.0'
   implementation 'com.ivanksk.pulkovo:core:1.0'
 ```
 2. Configure output with PulkovoDispatcher, you are all set with basic flow
-```
+```kotlin
 class App : Application() {
 
     companion object {
@@ -68,14 +68,14 @@ class App : Application() {
 Option when you want collect measurements into DB, analyze median, average, min and max values.
 In case of need - share result CSV via all available methods at Android device.
 1. Add dependencies:
-```
+```gradle
   debugImplementation 'com.ivanksk.pulkovo:debug:1.0'
   releaseImplementation 'com.ivanksk.pulkovo:production:1.0'
   implementation 'com.ivanksk.pulkovo:core:1.0'
   implementation 'com.ivanksk.pulkovo:statscollector:1.0'
 ```
 2. Configure output with PulkovoDispatcher, you are all set with basic flow
-```
+```kotlin
 class App : Application() {
 
     companion object {
@@ -114,7 +114,7 @@ class App : Application() {
 
 ## Dependency 
 To start using Pulkovo just add maven repo and all set of necessary 
-```
+```gradle
 buildscript {
     repositories {
         google()
@@ -127,7 +127,7 @@ buildscript {
 }
 ```
 Add dependencies
-```
+```gradle
   debugImplementation 'com.ivanksk.pulkovo:debug:1.0'
   releaseImplementation 'com.ivanksk.pulkovo:production:1.0'
   implementation 'com.ivanksk.pulkovo:core:1.0'
