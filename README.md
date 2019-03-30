@@ -23,8 +23,27 @@ tbd
 ```
 
 ## Dependency 
+To start using Pulkovo just add maven repo and all set of necessary 
 ```
-tbd
+buildscript {
+    repositories {
+        google()
+        jcenter()
+
+        maven {
+            url  "https://dl.bintray.com/ivanksk/pulkovo"
+        }
+    }
+}
+```
+Add dependencies
+```
+  debugImplementation 'com.ivanksk.pulkovo:debug:1.0'
+  releaseImplementation 'com.ivanksk.pulkovo:production:1.0'
+  implementation 'com.ivanksk.pulkovo:core:1.0'
+  implementation 'com.ivanksk.pulkovo:statscollector:1.0'
+  implementation 'com.ivanksk.pulkovo:rxextensions:1.0'
+  
 ```
 
 ## Examples
@@ -109,14 +128,19 @@ Example of StatsCollector usage, all, medians, average
   ********************************************************************************
 ```
 
-#StatsCollector
+# StatsCollector
 tbd
 
-#RxExtensions
+# RxExtensions
 tbd
 
-#Debug and Release builds
-tbd
+# Debug and Release builds
+There are 2 options for debug and production builds.
+To do
 
-#Gradle dependency
+```
+
+```
+
+# Gradle dependency
 tbd
