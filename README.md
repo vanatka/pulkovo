@@ -1,6 +1,6 @@
 # pulkovo
 
-Kotlin library to measure elapsed time for Kotlin code
+Kotlin library to measure elapsed time for Kotlin code: methods, code blocks, or with just start and stop 
 
 Brief description:
 
@@ -35,6 +35,15 @@ Brief description:
         .subscribe ({
             displayWeather(it)
         }, { Log.wtf(">>>", "oh my posh", it )})
+  }
+  
+  // here we measure how much time it will take
+  // to display data on UI, to set text to textviews and etc
+  private fun displayWeather(cityWeather: CityWeather) = measureMethodWithLabel(Metrics.DisplayWeather) {
+    cityName.text = "Tallinn"
+    humidity.text = "Humidity " + "%.2f".format(cityWeather.main!!.humidity)
+    temperature.text = "Temperature " + "%.2f".format((cityWeather.main!!.temp - 271.15))
+    description.text = "In general it's " + (cityWeather.weather!![0].description)
   }
   
   
