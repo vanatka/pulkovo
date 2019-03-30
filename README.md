@@ -1,6 +1,13 @@
 # Pulkovo. Kotlin library to measure method elapsed time.
 
-Kotlin library to measure elapsed time for Kotlin code: methods, code blocks, or with just start and stop methods call
+A kotlin-friendly library in functional programming style with ability to measure elapsed time for:
+- methods
+- code blocks
+- RxJava chains
+
+Also it provides StatsCollector plugin, to store measurements into db, calculate average, median, max and min values. With ability export to CSV file, to make analysis easier.
+
+It has release and debug implementation. 
 
 *Brief description:*
 Sometimes it's necessary measure, how much time it takes to execute some block of code.
@@ -17,10 +24,93 @@ This library has few concepts:
 tbd
 
 ## How to start
-1. Add dependency 
-2. Configure out
+### Basic usage
+1. Add dependencies
 ```
+  debugImplementation 'com.ivanksk.pulkovo:debug:1.0'
+  releaseImplementation 'com.ivanksk.pulkovo:production:1.0'
+  implementation 'com.ivanksk.pulkovo:core:1.0'
 ```
+2. Configure output with PulkovoDispatcher, you are all set with basic flow
+```
+class App : Application() {
+
+    companion object {
+
+        val WHAT_EVER_YOU_WANT_TAG = "TAG"
+
+    }
+
+    lateinit var statsReducer: StatsReducer
+
+    override fun onCreate() {
+        super.onCreate()
+        statsReducer = StatsReducer(this)
+        val context = this
+
+        PulkovoDispatcher
+            // Add logger to make output with measured values
+            // this is generic implementation
+            .addReducer(object : IReducer {
+
+                override fun reduce(record: IMeasureRecord) {
+                    // use what ever logger you want
+                    // here standard Android logger is used
+                    Log.e(WHAT_EVER_YOU_WANT_TAG, "$record")
+                }
+
+            })
+    }
+}
+```
+
+### Stats collector
+Option when you want collect measurements into DB, analyze median, average, min and max values.
+In case of need - share result CSV via all available methods at Android device.
+1. Add dependencies:
+```
+  debugImplementation 'com.ivanksk.pulkovo:debug:1.0'
+  releaseImplementation 'com.ivanksk.pulkovo:production:1.0'
+  implementation 'com.ivanksk.pulkovo:core:1.0'
+  implementation 'com.ivanksk.pulkovo:statscollector:1.0'
+```
+2. Configure output with PulkovoDispatcher, you are all set with basic flow
+```
+class App : Application() {
+
+    companion object {
+
+        val WHAT_EVER_YOU_WANT_TAG = "TAG"
+
+    }
+
+    lateinit var statsReducer: StatsReducer
+
+    override fun onCreate() {
+        super.onCreate()
+        statsReducer = StatsReducer(this)
+        val context = this
+
+        PulkovoDispatcher
+            // Add logger to make output with measured values
+            // this is generic implementation
+            .addReducer(object : IReducer {
+
+                override fun reduce(record: IMeasureRecord) {
+                    // use what ever logger you want
+                    // here standard Android logger is used
+                    Log.e(WHAT_EVER_YOU_WANT_TAG, "$record")
+                }
+
+            })
+            // Add StatsSollector to collect values
+            // get
+            .addReducer(statsReducer)
+    }
+}
+```
+3. Create instance of ```StatsCollector``` in Application class, or in any DI module (should be singleton)
+
 
 ## Dependency 
 To start using Pulkovo just add maven repo and all set of necessary 
@@ -134,13 +224,3 @@ tbd
 # RxExtensions
 tbd
 
-# Debug and Release builds
-There are 2 options for debug and production builds.
-To do
-
-```
-
-```
-
-# Gradle dependency
-tbd
