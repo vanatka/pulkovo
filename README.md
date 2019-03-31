@@ -20,9 +20,6 @@ This library has few concepts:
 - plugins-friendly
 - no code change for prod and debug version
 
-## Structure
-tbd
-
 ## How to start
 ### Basic usage
 1. Add dependencies
