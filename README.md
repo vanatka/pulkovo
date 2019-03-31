@@ -12,7 +12,26 @@ It has release and debug implementation.
 *Brief description:*
 Sometimes it's necessary measure, how much time it takes to execute some block of code.
 In java-android-world there are such solutions like Pury, Meter and etc.
-However they are not Kotlin friendly. 
+However they are not Kotlin friendly, like 
+
+```kotlin
+  // here we measure method elapsed time, 
+  // label will be tracked as MainActivity::onCreate, 
+  // class & method name will extracted automatically
+  override fun onCreate(savedInstanceState: Bundle?) = measureMethod(this) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+
+    setupClickListeners()
+  }
+  
+  // here we measure method elapsed time, 
+  // here we use custom label, it will tracked as "onStart method"
+  override fun onStart() = measureMethodWithLabel("onStart method") {
+    super.onStart()
+    //
+  }
+```
 
 This library has few concepts:
 - simplicity: 
