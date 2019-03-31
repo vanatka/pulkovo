@@ -188,22 +188,22 @@ Example of StatsCollector usage, all, medians, average
 ```
   ********************************************************************************
   All records
-  Display weather took 2 ms at 1553952094878 with  payload
-  Load weather took 142 ms at 1553952094737 with  payload
-  Display weather took 1 ms at 1553952096002 with  payload
-  Load weather took 142 ms at 1553952095860 with  payload
-  Display weather took 2 ms at 1553952096432 with  payload
-  Load weather took 135 ms at 1553952096297 with  payload
-  Display weather took 1 ms at 1553952096583 with  payload
-  Load weather took 135 ms at 1553952096449 with  payload
-  Display weather took 1 ms at 1553952096741 with  payload
-  Load weather took 141 ms at 1553952096601 with  payload
-  Display weather took 2 ms at 1553952096905 with  payload
-  Load weather took 151 ms at 1553952096755 with  payload
-  Display weather took 2 ms at 1553952097065 with  payload
-  Load weather took 140 ms at 1553952096925 with  payload
-  Display weather took 2 ms at 1553952097217 with  payload
-  Load weather took 135 ms at 1553952097082 with  payload
+  Display weather took 2 ms at 1553952094878 
+  Load weather took 142 ms at 1553952094737 
+  Display weather took 1 ms at 1553952096002
+  Load weather took 142 ms at 1553952095860 
+  Display weather took 2 ms at 1553952096432
+  Load weather took 135 ms at 1553952096297 
+  Display weather took 1 ms at 1553952096583
+  Load weather took 135 ms at 1553952096449 
+  Display weather took 1 ms at 1553952096741
+  Load weather took 141 ms at 1553952096601 
+  Display weather took 2 ms at 1553952096905
+  Load weather took 151 ms at 1553952096755 
+  Display weather took 2 ms at 1553952097065
+  Load weather took 140 ms at 1553952096925
+  Display weather took 2 ms at 1553952097217
+  Load weather took 135 ms at 1553952097082 
   ********************************************************************************
   All Medians
   Median(label=Display weather, median=2, max=2, min=1)
