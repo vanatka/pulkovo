@@ -52,7 +52,6 @@ class MainActivity : AppCompatActivity() {
     // here we measure how much time it will take
     // to display data on UI, to set text to textviews and etc
     private fun displayWeather(cityWeather: CityWeather) = measureMethodWithLabel(Metrics.DisplayWeather) {
-        Log.e(">>>", " " + Gson().toJson(cityWeather))
         cityName.text = "Tallinn"
         humidity.text = "Humidity " + "%.2f".format(cityWeather.main!!.humidity)
         temperature.text = "Temperature " + "%.2f".format((cityWeather.main!!.temp - 271.15))
@@ -60,7 +59,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    override fun onStart() = measureMethod("onStart method") {
+    override fun onStart() = measureMethodWithLabel("onStart method") {
         super.onStart()
     }
 

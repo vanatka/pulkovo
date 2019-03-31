@@ -37,6 +37,6 @@ class App : Application() {
             })
             // Add StatsSollector to collect values
             // get
-            .addReducer(StatsReducer(context))
+            .addReducer(statsReducer)
     }
 }
