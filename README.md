@@ -38,12 +38,8 @@ class App : Application() {
 
     }
 
-    lateinit var statsReducer: StatsReducer
-
     override fun onCreate() {
         super.onCreate()
-        statsReducer = StatsReducer(this)
-        val context = this
 
         PulkovoDispatcher
             // Add logger to make output with measured values
@@ -86,7 +82,6 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         statsReducer = StatsReducer(this)
-        val context = this
 
         PulkovoDispatcher
             // Add logger to make output with measured values
@@ -126,7 +121,7 @@ buildscript {
 Add dependencies
 ```gradle
   debugImplementation 'com.ivanksk.pulkovo:debug:1.0'
-  releaseImplementation 'com.ivanksk.pulkovo:production:1.0'
+  releaseImplementation 'com.ivanksk.pulkovo:release:1.0'
   implementation 'com.ivanksk.pulkovo:core:1.0'
   implementation 'com.ivanksk.pulkovo:statscollector:1.0'
   implementation 'com.ivanksk.pulkovo:rxextensions:1.0'
