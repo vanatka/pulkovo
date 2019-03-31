@@ -9,10 +9,9 @@ Also it provides StatsCollector plugin, to store measurements into db, calculate
 
 It has release and debug implementation. 
 
-*Brief description:*
 Sometimes it's necessary measure, how much time it takes to execute some block of code.
 In java-android-world there are such solutions like Pury, Meter and etc.
-However they are not Kotlin friendly, like 
+However they are not Kotlin friendly. With Pulkovo it's possible do it in Kotlin way:
 
 ```kotlin
   // here we measure method elapsed time, 
