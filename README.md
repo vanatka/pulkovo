@@ -32,11 +32,13 @@ However they are not Kotlin friendly. With Pulkovo it's possible do it in Kotlin
   }
 ```
 
-This library has few concepts:
-- simplicity: 
-- flexible extesibility: synchronous API to make it scalable without huge dependecies
-- plugins-friendly
-- no code change for prod and debug version
+and see output:
+```
+  MainActivity::onCreate took 129 ms at 1554050670580 with null payload
+  MainActivity::onStart took 0 ms at 1554050670583 with null payload
+  Display weather took 0 ms at 1554050688450 with null payload
+  Load weather took 600 ms at 1554050687851 with null payload
+```
 
 ## How to start
 ### Basic usage
@@ -122,7 +124,7 @@ class App : Application() {
 3. Create instance of ```StatsCollector``` in Application class, or in any DI module (should be singleton)
 
 
-## Dependency 
+## Usage in your project 
 To start using Pulkovo just add maven repo and all set of necessary 
 ```gradle
 buildscript {
