@@ -45,7 +45,7 @@ and see output:
 1. Add dependencies
 ```gradle
   debugImplementation 'com.ivanksk.pulkovo:debug:1.0'
-  releaseImplementation 'com.ivanksk.pulkovo:production:1.0'
+  releaseImplementation 'com.ivanksk.pulkovo:release:1.0'
   implementation 'com.ivanksk.pulkovo:core:1.0'
 ```
 2. Configure output with PulkovoDispatcher, you are all set with basic flow
