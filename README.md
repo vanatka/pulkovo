@@ -215,9 +215,3 @@ Example of StatsCollector usage, all, medians, average
   ********************************************************************************
 ```
 
-# StatsCollector
-tbd
-
-# RxExtensions
-tbd
-
