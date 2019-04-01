@@ -32,11 +32,13 @@ However they are not Kotlin friendly. With Pulkovo it's possible do it in Kotlin
   }
 ```
 
-This library has few concepts:
-- simplicity: 
-- flexible extesibility: synchronous API to make it scalable without huge dependecies
-- plugins-friendly
-- no code change for prod and debug version
+and see output:
+```
+  MainActivity::onCreate took 129 ms at 1554050670580 with null payload
+  MainActivity::onStart took 0 ms at 1554050670583 with null payload
+  Display weather took 0 ms at 1554050688450 with null payload
+  Load weather took 600 ms at 1554050687851 with null payload
+```
 
 ## How to start
 ### Before start
@@ -59,7 +61,7 @@ buildscript {
 1. Add dependencies
 ```gradle
   debugImplementation 'com.ivanksk.pulkovo:debug:1.0'
-  releaseImplementation 'com.ivanksk.pulkovo:production:1.0'
+  releaseImplementation 'com.ivanksk.pulkovo:release:1.0'
   implementation 'com.ivanksk.pulkovo:core:1.0'
 ```
 2. Configure output with PulkovoDispatcher, you are all set with basic flow
@@ -130,7 +132,6 @@ class App : Application() {
 
             })
             // Add StatsSollector to collect values
-            // get
             .addReducer(statsReducer)
     }
 }
