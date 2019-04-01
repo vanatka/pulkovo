@@ -39,7 +39,23 @@ This library has few concepts:
 - no code change for prod and debug version
 
 ## How to start
+### Before start
+Add maven repository
+```groovy 
+buildscript {
+    repositories {
+        google()
+        jcenter()
+
+        maven {
+            url  "https://dl.bintray.com/ivanksk/pulkovo"
+        }
+    }
+}
+```
+
 ### Basic usage
+
 1. Add dependencies
 ```gradle
   debugImplementation 'com.ivanksk.pulkovo:debug:1.0'
@@ -122,7 +138,7 @@ class App : Application() {
 3. Create instance of ```StatsCollector``` in Application class, or in any DI module (should be singleton)
 
 
-## Dependency 
+## Repository and dependencies 
 To start using Pulkovo just add maven repo and all set of necessary 
 ```gradle
 buildscript {
@@ -138,11 +154,11 @@ buildscript {
 ```
 Add dependencies
 ```gradle
-  debugImplementation 'com.ivanksk.pulkovo:debug:1.0'
-  releaseImplementation 'com.ivanksk.pulkovo:release:1.0'
-  implementation 'com.ivanksk.pulkovo:core:1.0'
-  implementation 'com.ivanksk.pulkovo:statscollector:1.0'
-  implementation 'com.ivanksk.pulkovo:rxextensions:1.0'
+  debugImplementation 'com.ivanksk.pulkovo:debug:1.0' // for debug builds
+  releaseImplementation 'com.ivanksk.pulkovo:release:1.0' // for release builds
+  implementation 'com.ivanksk.pulkovo:core:1.0' 
+  implementation 'com.ivanksk.pulkovo:statscollector:1.0' // to collect measurements into db
+  implementation 'com.ivanksk.pulkovo:rxextensions:1.0' // to make measurements with RxJava
   
 ```
 
