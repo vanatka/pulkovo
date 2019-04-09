@@ -246,10 +246,13 @@ Example of StatsCollector usage, all, medians, average
 ```
 
 ## FAQ: Why Pulkovo?
-It's kind of sentimental.. :) Pulkovo is nice a place close to Kotlin Island, just 30 mins drive to Kotlin Island, it's part of St-Petersburg, Russia. 
-Pulkovo is very interesting place, here is located Airport, seesight viewpoint and *Pulkovo Astronomical Observatory* (what is part of the UNESCO World Heritage Site).
+It's kind of sentimental.. :) Pulkovo is nice a place close to Kotlin Island, just 30 mins drive, it's part of St-Petersburg, Russia. 
+
+Pulkovo is very interesting place, here is located St-Petersburg Airport Pulkovo, seesight viewpoint on Pulkovo Heights and *Pulkovo Astronomical Observatory* (what is part of the UNESCO World Heritage Site).
+
 The *Pulkovo Meridian*, which passes through the center of the main building of the Observatory and is located at 30°19,6‘ east of Greenwich, was the point of departure for all former geographical maps of Russia. 
+
 In former times *Pulkovo Meridian* was used as main meridian in Russian Empire, and what is interesting Pulkovo is located in the center of "Moscow timezone", so technically, time in MSK timezone is Pulkovo timezone..
 
-[Pulkovo, is a start point where all measurements begins :)]
+Pulkovo is just a start point where all measurements begin and even for Kotlin :)
 
